@@ -1,0 +1,26 @@
+.home-card {
+    text-align: center;
+    width: 60%;
+}
+
+.home-card p {
+    margin: 20px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-container a {   
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20%;
+    font-size: 1.5rem;
+}
+
+.social-container a:hover {
+    background-color: rgb(255, 255, 255, .1);
+}
