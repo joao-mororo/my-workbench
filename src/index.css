@@ -9,3 +9,8 @@ body {
   background-color: rgb(20, 20, 20);
   color: #fff;
 }
+
+@font-face {
+  font-family: "YesevaOne";
+  src: local("YesevaOne"), url("./fonts/YesevaOne/YesevaOne-Regular.ttf") format("truetype");
+}

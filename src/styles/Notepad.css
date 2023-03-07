@@ -1,0 +1,20 @@
+.notepad-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.notepad {
+    background-color: #202020;
+    font-size: large;
+    border: none;
+    width: 90%;
+    height: 90%;
+    border-radius: 15px;
+    padding: 10px;
+}
+.notepad:focus {
+    outline: none;
+}

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 
+import './fonts/YesevaOne/YesevaOne-Regular.ttf';
+
 import App from './App';
 import Home from './pages/Home';
 import Notepad from './pages/Notepad';

@@ -38,7 +38,7 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar'>
-            <h1>MyWorkbench</h1>
+            <h1><span style={{color: '#0d6efd'}}>M</span>y<span style={{color: '#0d6efd'}}>W</span>orkbench</h1>
             <hr />
             <div className='nav-container'>
                 {sidebarNavItems.map((item, i) => (
