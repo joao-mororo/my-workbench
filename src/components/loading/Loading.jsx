@@ -1,12 +1,12 @@
 import React from 'react'
 import "./Style.css"
 
-const Loading = () => {
+const Loading = ({color}) => {
+    const style = {
+        background: color
+    }
     return (
-        <>
-        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        <p>Em construção</p>
-        </>
+        <div className="lds-ellipsis"><div style={style}></div><div style={style}></div><div style={style}></div><div style={style}></div></div>
     )
 }
 

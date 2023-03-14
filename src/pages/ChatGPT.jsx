@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { IoSend } from 'react-icons/io5'
 import useKeypress from 'react-use-keypress';
+
+import Loading from '../components/loading/Loading';
+
 import "../styles/ChatGPT.css"
 
 const ChatGPT = () => {
@@ -14,7 +17,7 @@ const ChatGPT = () => {
     if (message === "") {
       return
     }
-    setArray([...array, clienteMessage])
+    setArray([...array, clienteMessage, <p className='ai-message'><Loading color="#fff" /></p>])
     setLoading(true)
 
     fetch("https://api.openai.com/v1/completions", {
@@ -59,6 +62,7 @@ const ChatGPT = () => {
       <div className="chat-body">
         <p className="client-message">Hi, Im Client</p>
         <p className="ai-message">Im ChatGPT</p>
+        <p className="ai-message"><Loading color="#fff" /></p>
         <p className="error-message">Im a errror message </p>
         {array}
       </div>
