@@ -13,11 +13,15 @@ const ChatGPT = () => {
   const [apiKey] = useState(process.env.REACT_APP_OPENAI_API_KEY)
 
   const sendMessage = () => {
+    const textMessage = message
     const clienteMessage = <p className='client-message'>{message}</p>
+
     if (message === "") {
       return
     }
+
     setArray([...array, clienteMessage, <p className='ai-message'><Loading color="#fff" /></p>])
+    setMessage('')
     setLoading(true)
 
     fetch("https://api.openai.com/v1/completions", {
@@ -29,7 +33,7 @@ const ChatGPT = () => {
       },
       body: JSON.stringify({
         model: "text-davinci-003",
-        prompt: message,
+        prompt: textMessage,
         max_tokens: 2048,
         temperature: 0.5
       })
@@ -58,16 +62,15 @@ const ChatGPT = () => {
 
   return (
     <div className='chatgpt-page'>
-      <p style={{position: 'absolute', right: '10px', top: '10px'}}>{loading ? 'loading' : 'not loading'}</p>
+      {/* <p style={{position: 'absolute', right: '10px', top: '10px'}}>{loading ? 'loading' : 'not loading'}</p> */}
       <div className="chat-body">
-        <p className="client-message">Hi, Im Client</p>
-        <p className="ai-message">Im ChatGPT</p>
-        <p className="ai-message"><Loading color="#fff" /></p>
-        <p className="error-message">Im a errror message </p>
+        <p className="ai-message">Olá, eu sou o ChatGPT. Por enquanto, esta seção não está em pleno funcionamento. Em breve teremos novidades. ^^</p>
+        {/* <p className="ai-message">Im ChatGPT</p>
+        <p className="error-message">Im a errror message </p> */}
         {array}
       </div>
       <div className="input-area">
-        <input value={message} onChange={(e) => setMessage(e.target.value)} type="text" />
+        <input disabled={loading} value={message} onChange={(e) => setMessage(e.target.value)} type="text" />
         <button onClick={sendMessage}><IoSend /></button>
       </div>
     </div>

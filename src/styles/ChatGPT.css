@@ -73,3 +73,16 @@
     cursor: pointer;
     font-size: larger;
 }
+
+@media (max-width: 600px) {
+    .client-message,
+    .ai-message,
+    .error-message {
+        margin: 10px 1rem;
+        max-width: 75%;
+    }
+
+    .input-area {
+        width: 95%;
+    }
+}

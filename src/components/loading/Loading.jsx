@@ -1,12 +1,14 @@
 import React from 'react'
 import "./Style.css"
 
-const Loading = ({color}) => {
-    const style = {
-        background: color
-    }
+const Loading = () => {
+
     return (
-        <div className="lds-ellipsis"><div style={style}></div><div style={style}></div><div style={style}></div><div style={style}></div></div>
+        <div className="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     )
 }
 

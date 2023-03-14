@@ -31,3 +31,13 @@
 .social-container a:hover {
     color: #0d6efd;
 }
+
+@media (max-width: 600px) {
+    .home-card {
+        width: 100vw;
+    }
+
+    .home-card h1 {
+        font-size: 2.5rem;
+    }
+}
