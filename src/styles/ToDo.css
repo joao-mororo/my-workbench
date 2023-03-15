@@ -1,0 +1,92 @@
+.todo-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.todo-card {
+    width: 50%;
+}
+
+.input-item {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.todo-card hr {
+    width: 80%;
+    position: relative;
+    left: 10%;
+}
+
+.todo-card p {
+    display: flex;
+    justify-content: space-between;
+    
+    background-color: rgb(255, 255, 255, .1);
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.todo-card input {
+    background-color: rgb(255, 255, 255, .1);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    caret-color: #0d6efd;
+    transition: .1s;
+}
+
+.todo-card input:focus {
+    outline: #0d6efd 1px;
+}
+
+.todo-card hr {
+    margin: .5rem 0;
+}
+
+.todo-card span {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.todo-card button {
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+.action-buttons {
+    display: flex;
+}
+
+.btn-add {
+    background-color: #0d6efd !important;
+    padding: 10px !important;
+    font-size: 1.5rem !important;
+    margin-left: 2px;
+}
+.btn-done {
+    color: #198754 !important;
+}
+.btn-remove {
+    color: #dc3545 !important;
+}
+
+@media (max-width: 600px) {
+    .todo-card {
+        width: 90%;
+    }
+}
