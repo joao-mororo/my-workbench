@@ -5,12 +5,14 @@ import './index.css';
 
 import './fonts/YesevaOne/YesevaOne-Regular.ttf';
 
+// Routes
 import App from './App';
 import Home from './pages/Home';
 import Notepad from './pages/Notepad';
 import Calculator from './pages/Calculator'
 import ToDo from './pages/ToDo'
 import ChatGPT from './pages/ChatGPT'
+import Notes from './pages/Notes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +25,7 @@ root.render(
           <Route path='calculator' element={<Calculator />} />
           <Route path='todo' element={<ToDo />} />
           <Route path='chatgpt' element={<ChatGPT />} />
+          <Route path='notes' element={<Notes />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -23,6 +23,10 @@ const sidebarNavItems = [
         display: 'To-Do',
         to: 'todo'
     },
+    {
+        display: 'Notes',
+        to: 'notes'
+    },
 ]
 
 const Sidebar = () => {
