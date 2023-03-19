@@ -19,6 +19,12 @@ const Notes = () => {
         return ID;
     }
 
+    const randomColor = () => {
+        const colors = ['#0d6efd', '#6610f2', '#6f42c1', '#d63384', '#dc3545', '#198754']
+        const color = Math.floor(Math.random() * colors.length);
+        return colors[color]
+    }
+
     const addNote = () => {
         if (title === '' || body === '') {
             return
@@ -26,6 +32,7 @@ const Notes = () => {
         
         setNotes([...notes, {
             id: randomID(),
+            color: randomColor(),
             title,
             body
         }])
@@ -59,8 +66,8 @@ const Notes = () => {
                 ></textarea>
             </div>
 
-            {notes.map((note) => (
-                <div className='note-card' style={{ backgroundColor: '#ffffff33' }}>
+            {notes.map((note, i) => (
+                <div className='note-card' style={{ backgroundColor: note.color || '#ffffff33' }} key={i}>
                     <button onClick={() => removeNote(note.id)}><BiX /></button>
                     <p className='card-title'>{note.title}</p>
                     <hr />

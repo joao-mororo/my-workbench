@@ -13,6 +13,7 @@ import Calculator from './pages/Calculator'
 import ToDo from './pages/ToDo'
 import ChatGPT from './pages/ChatGPT'
 import Notes from './pages/Notes';
+import MobileMenu from './pages/MobileMenu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
           <Route path='todo' element={<ToDo />} />
           <Route path='chatgpt' element={<ChatGPT />} />
           <Route path='notes' element={<Notes />} />
+          <Route path='menu' element={<MobileMenu />} />
         </Route>
       </Routes>
     </BrowserRouter>

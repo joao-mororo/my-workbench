@@ -1,3 +1,10 @@
 .App {
   display: flex;
 }
+
+.btn-open-menu {
+  position: absolute;
+  color: #fff;
+  margin: 10px;
+  font-size: 2rem;
+}
