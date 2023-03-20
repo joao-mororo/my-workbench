@@ -1,33 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { navItems } from '../Constants'
 import { Link, useLocation } from 'react-router-dom'
 import './Style.css'
-
-const sidebarNavItems = [
-    {
-        display: 'Início',
-        to: '/',
-    },
-    {
-        display: 'Calculadora',
-        to: 'calculator'
-    },
-    {
-        display: 'ChatGPT',
-        to: 'chatgpt'
-    },
-    {
-        display: 'Bloco de notas',
-        to: 'notepad'
-    },
-    {
-        display: 'To-Do',
-        to: 'todo'
-    },
-    {
-        display: 'Notes',
-        to: 'notes'
-    },
-]
 
 const Sidebar = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -35,8 +9,9 @@ const Sidebar = () => {
 
     // change active index
     useEffect(() => {
-        const curPath = window.location.pathname.split('/')[1];
-        const activeItem = sidebarNavItems.findIndex(item => item.to === curPath);
+        // const curPath = window.location.pathname.split('/')[1];
+        const curPath = window.location.pathname;
+        const activeItem = navItems.findIndex(item => item.to === curPath);
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
     }, [location])
 
@@ -45,9 +20,9 @@ const Sidebar = () => {
             <h1><span style={{color: '#0d6efd'}}>M</span>y<span style={{color: '#0d6efd'}}>W</span>orkbench</h1>
             <hr />
             <div className='nav-container'>
-                {sidebarNavItems.map((item, i) => (
+                {navItems.map((item, i) => (
                     <Link to={item.to} key={i} className={`sidebar-item ${activeIndex === i ? 'active' : ''}`}>
-                        {item.display}
+                        <span className="icon">{item.icon && item.icon}</span> {item.display}
                     </Link>
                 ))}
             </div>
