@@ -5,9 +5,10 @@ import useKeypress from 'react-use-keypress';
 import '../styles/ToDo.css'
 
 const ToDo = () => {
-  const [todoList, setTodoList] = useLocalStorage('todo-list', [])
-  const [doneList, setDoneList] = useState([])
   const [inputValue, setInputValue] = useState('')
+  const [todoList, setTodoList] = useLocalStorage('todo-list', [])
+  const undoneList = todoList.filter((item) => item.done === false)
+  const doneList = todoList.filter((item) => item.done === true)
 
   const addItem = () => {
     if (inputValue === '') { return }
@@ -29,15 +30,10 @@ const ToDo = () => {
     setTodoList(newList)
   }
 
-  const removeDoneListItem = (label) => {
-    const newList = doneList.filter((item) => item.label !== label)
-    setDoneList(newList)
-  }
-
   const doneItem = (label) => {
-    removeTodoListItem(label)
-    setDoneList([
-      ...doneList,
+    const newList = todoList.filter((item) => item.label !== label)
+    setTodoList([
+      ...newList,
       {
         label,
         done: true
@@ -52,24 +48,24 @@ const ToDo = () => {
           <input type="text" placeholder='Digite sua tarefa' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
           <button className='btn-add' onClick={addItem}><BiPlus /></button>
         </div>
-        <div className="todo-list">
-          {todoList.map((item) => (
-            <p>
+        <div className="undone-list">
+          {undoneList.map((item, i) => (
+            <div className='todo-item' key={i}>
               <span>{item.label}</span>
               <div className="action-buttons">
                 <button className='btn-done' onClick={() => doneItem(item.label)}><BiCheck /></button>
                 <button className='btn-remove' onClick={() => removeTodoListItem(item.label)}><BiX /></button>
               </div>
-            </p>
+            </div>
           ))}
         </div>
-        {doneList.length > 0 && todoList.length > 0 && <hr />}
+        {doneList.length > 0 && <hr />}
         <div className="done-list">
-          {doneList.map((item) => (
-            <p>
+          {doneList.map((item, i) => (
+            <div className='todo-item' key={i}>
               <span><s>{item.label}</s></span>
-              <button className='btn-remove' onClick={() => removeDoneListItem(item.label)}><BiX /></button>
-            </p>
+              <button className='btn-remove' onClick={() => removeTodoListItem(item.label)}><BiX /></button>
+            </div>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import { AiFillHome, AiFillCalculator } from 'react-icons/ai'
 import { SiOpenai } from 'react-icons/si'
 import { IoMdCheckbox } from 'react-icons/io'
 import { CgNotes } from 'react-icons/cg'
-import { MdStickyNote2 } from 'react-icons/md'
+import { MdStickyNote2, MdGTranslate } from 'react-icons/md'
 
 export const navItems = [
     {
@@ -35,4 +35,9 @@ export const navItems = [
         display: 'Notes',
         to: '/notes'
     },
+    // {
+    //     icon: <MdGTranslate />,
+    //     display: 'Tradutor',
+    //     to: '/tradutor'
+    // },
 ]
