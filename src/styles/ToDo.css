@@ -73,7 +73,7 @@
 }
 
 .btn-add {
-    background-color: #0d6efd !important;
+    background-color: var(--blue) !important;
     padding: 10px !important;
     font-size: 1.5rem !important;
     margin-left: 2px;

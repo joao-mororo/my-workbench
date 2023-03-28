@@ -4,7 +4,7 @@
 }
 
 .home-card h1 {
-    color:  #0d6efd;
+    color:  var(--blue);
     font-family: 'YesevaOne';
     font-size: 3rem;
 }
@@ -29,7 +29,7 @@
 }
 
 .social-container a:hover {
-    color: #0d6efd;
+    color: var(--blue);
 }
 
 @media (max-width: 600px) {

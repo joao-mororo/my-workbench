@@ -35,7 +35,7 @@
 }
 
 .menuHeader span {
-    color: #0d6efd;
+    color: var(--blue);
     font-family: 'YesevaOne';
 }
 

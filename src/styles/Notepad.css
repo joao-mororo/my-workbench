@@ -20,6 +20,6 @@
 }
 
 .notepad::selection {
-    background-color: #0d6efd;
+    background-color: var(--blue);
     color: #000;
 }
