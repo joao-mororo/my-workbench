@@ -32,16 +32,14 @@ const Sidebar = () => {
                     ))}
                 </div>
             </div>
-            <span className='user-options'>
+            {/* <span className='user-options'>
                 <span className="icon"><CgProfile /></span>
                 {user ? (
                     <>{user} <button className='btn-logout' onClick={() => singout()}><IoLogOut /></button></>
                 ) : (
                     <>Desconectado <Link className='btn-login' to="/login"><IoLogIn /></Link></>
                 )}
-            </span>
-
-
+            </span> */}
         </div>
     )
 }

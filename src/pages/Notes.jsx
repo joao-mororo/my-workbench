@@ -1,23 +1,13 @@
 import React, { useState } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage';
+import generateId from '../functions/generateId';
 import { BiPlus, BiX } from "react-icons/bi";
 import '../styles/Notes.css'
-import useLocalStorage from '../hooks/useLocalStorage';
 
 const Notes = () => {
     const [notes, setNotes] = useLocalStorage('notes', [])
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-
-    const randomID = () => {
-        let ID = "";
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-        for (let i = 0; i < 8; i++) {
-            ID += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-
-        return ID;
-    }
 
     const randomColor = () => {
         const colors = ['#0d6efd', '#6610f2', '#6f42c1', '#d63384', '#dc3545', '#198754']
@@ -31,7 +21,7 @@ const Notes = () => {
         }
         
         setNotes([...notes, {
-            id: randomID(),
+            id: generateId(),
             color: randomColor(),
             title,
             body

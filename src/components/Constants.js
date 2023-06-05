@@ -35,9 +35,9 @@ export const navItems = [
         display: 'Notes',
         to: '/notes'
     },
-    // {
-    //     icon: <MdGTranslate />,
-    //     display: 'Tradutor',
-    //     to: '/tradutor'
-    // },
+    {
+        icon: <MdGTranslate />,
+        display: 'Tradutor',
+        to: '/tradutor'
+    },
 ]
